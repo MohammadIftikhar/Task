@@ -1,0 +1,12 @@
+--- # Target Playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  task:
+    - name: install git on ubuntu
+      action: apt name=git state=present
+      
+    - name: install git on redhat
+      action: yum name=git state=present
